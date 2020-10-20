@@ -45,7 +45,7 @@ PSYCOPG2 = False
 try:
     import sqlalchemy
     SQLALCHEMY = True
-    from sqlalchemy import create_engine, Column, Integer, String, Sequence
+    from sqlalchemy import create_engine, Column, Integer, String, Sequence, Text
     from sqlalchemy.ext.declarative import declarative_base
     from sqlalchemy.orm import sessionmaker
 except:
@@ -353,18 +353,18 @@ class TracebackCenter(object):
             class DB(base):
                 __tablename__ = 'traceback'
                 
-                
                 id = Column(Integer, Sequence('trackeback_id_seq'), primary_key = True)
-                date = Column(String)
-                host = Column(String)
-                app = Column(String)
-                tb = Column(String)
-                tp = Column(String)
-                vl = Column(String)
+                date = Column(String(100))
+                host = Column(String(100))
+                app = Column(Text)
+                tb = Column(Text)
+                tp = Column(Text)
+                vl = Column(Text)
             
-            if not cls.CONFIG.get_config('database', 'first'):
+            if cls.CONFIG.get_config('database', 'first'):
+                print(make_colors("Create table First ! ....", 'lw', 'lr'))
                 base.metadata.create_all(db)
-                cls.CONFIG.write_config('database', 'first', '1')
+                cls.CONFIG.write_config('database', 'first', 'false')
             
             Session = sessionmaker(db)
             session = Session()

@@ -1,10 +1,11 @@
 from traceback_center import TracebackCenter
 import sys
 sys.excepthook = TracebackCenter.get_traceback
-# try:
-print(sys.argv[1])
-# except:
-	# pass
+try:
+	print(sys.argv[1])
+except:
+	pass
+print(sys.argv[2])
 # print(dir(sys))
 # print("-"*100)
 # TracebackCenter.get_traceback()
