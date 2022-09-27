@@ -1,23 +1,10 @@
-// App.js
-import React, { Component } from 'react';
-import Table from './table';
-import Search from './search';
-// import Main from './main';
-
-class App extends Component {
-  // constructor(props){
-    // super(props)
-    // this.state = {
-    //   tracebacks: []
-    // }
+class App extends React.Component {
+  
     state = {
       tracebacks: [],
-      logs: [
-        {'id': 222, 'age':55, 'hobby':'hack'}
-      ],
       traceback_type: []
     };
-  // }
+  
 /* 
    This is where the magic happens
 */
@@ -29,7 +16,7 @@ class App extends Component {
         //   'Content-Type':'application/json',
         // }
       }); // fetching the data from api, before the page loaded
-      // console.log(res);
+      console.log(res);
       const datas = await res.json();
       console.log(datas);
 
@@ -47,14 +34,16 @@ class App extends Component {
   }
 
   render() {
+    console.log("TRACEBACKS = ", this.state.tracebacks)
     return (
       <div className="App">
-      <Search />
-      <Table tracebacks={ this.state.tracebacks} traceback_type = {this.state.traceback_type} logs={this.state.logs}/>
+        <Table tracebacks={ this.state.tracebacks} traceback_type = {this.state.traceback_type} />
       </div>
     );
   }
 }
 
-export default App;
+ReactDOM.render(<App />, document.getElementById('app'));
+
+
 

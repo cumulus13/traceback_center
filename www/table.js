@@ -1,6 +1,4 @@
-import React, { Component } from 'react'
-
-class Table extends Component {
+class Table extends React.Component {
    constructor(props) {
       super(props) //since we are extending class Table so we have to use super in order to override Component class constructor
       this.state = { //state is by default an object
@@ -23,12 +21,14 @@ class Table extends Component {
 
          headers: [
             { date: '', host: '', traceback: '', type: '', value: '' },
-         ]
+         ],
+
+         tracebacks: this.props.tracebacks
       }
    }
 
-   re_color = (id, date, host, tb, tp, vl) => {
-      const { traceback_type } = this.props;
+   re_color = (id, date, host, tb, tp, vl, traceback_type) => {
+      // const { traceback_type } = this.props;
       var ttype = null
       var color = null
       // console.log("traceback_type =", traceback_type);
@@ -51,12 +51,14 @@ class Table extends Component {
       }
    }
       
-   showData() {
-      const {tracebacks} = this.props;
-      return tracebacks.map((x) => {
+   showData(tracebacks, traceback_type) {
+      // const {tracebacks} = this.props;
+      console.log("tracebacks =", tracebacks);
+      console.log("traceback_type =", traceback_type);
+      return tracebacks && tracebacks.map((x) => {
          const { id, date, host, tb, tp, vl } = x //destructuring
          return(
-            this.re_color(id, date, host, tb, tp, vl)
+            this.re_color(id, date, host, tb, tp, vl, traceback_type)
          )
       })
    }
@@ -89,14 +91,14 @@ class Table extends Component {
       })
    }
 
-   render() {
+render() {
+      const {tracebacks, traceback_type } = this.props;
       return (
          <div className='tracebacks'>
-            <h1 id='title'>Traceback Logs</h1>
-            <table id='students'>
+            <table id='traceback' className="table table-bordered table-dark">
                <tbody>
                   <tr className="header" id='header'>{ this.setHeader() }</tr>
-                  { this.showData() }
+                  { this.showData(tracebacks, traceback_type) }
                </tbody>
             </table>
          </div>
@@ -105,4 +107,4 @@ class Table extends Component {
 
 }
 
-export default Table //exporting a component make it reusable and this is the beauty of react
+ReactDOM.render(<Table />, document.getElementById('table-responsive'));

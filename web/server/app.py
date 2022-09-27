@@ -10,7 +10,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 app.config.from_mapping(SECRET_KEY='1x2c3v4b5n6m7,8.', DATABASES=db)
 
-from models import Traceback
+from models import *
 
 try:
 	os.makedirs(app.instance_path)
@@ -30,7 +30,15 @@ def index():
 @app.route('/getall')
 def get_all():
 	try:
-		track = Traceback.query.all()
+		track = Traceback.query.order_by(Traceback.id.desc()).all()
+		return jsonify([e.serialize() for e in track])
+	except Exception as e:
+		return str(e)
+
+@app.route('/gettracebacktype')
+def get_traceback_type():
+	try:
+		track = TracebackType.query.all()
 		return jsonify([e.serialize() for e in track])
 	except Exception as e:
 		return str(e)

@@ -24,11 +24,32 @@ class Traceback(db.Model):
 
     def serialize(self):
         return {
-                'id': self.id,
-                'date': self.date,
-                'host': self.host,
-                'app': self.app,
-                'tb': self.tb,
-                'tp': self.tp,
-                'vl': self.vl
-            }
+            'id': self.id,
+            'date': self.date,
+            'host': self.host,
+            'app': self.app,
+            'tb': self.tb,
+            'tp': self.tp,
+            'vl': self.vl
+        }
+
+class TracebackType(db.Model):
+    __tablename__ = 'traceback_type'
+
+    id = db.Column(db.Integer, db.Sequence('trackebacktype_id_seq'), primary_key = True)
+    name = db.Column(db.String)
+    color = db.Column(db.String)
+
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+    def __repr(self):
+        return '<id {}:{}:{}>'.format(self.id, self.name, self.color)
+
+    def serialize(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'color': self.color,
+        }

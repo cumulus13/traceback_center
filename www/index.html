@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 4, from LayoutIt!</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10">
+				<table>
+					<tr>
+						<td>
+							<div class="table_title">
+								<h1 id='title'>Traceback Logs</h1>
+							</div>
+						</td>
+						<td>
+							<div class="search">
+								<nav class="navbar navbar-expand-lg navbar-light bg-light">
+									<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+										<form class="form-inline">
+											<input class="form-control mr-sm-2" type="text"> 
+											<button class="btn btn-primary my-2 my-sm-0" type="submit">
+												Search
+											</button>
+										</form>
+									</div>
+								</nav>
+							</div>
+						</td>
+						<td class='timestamp'>
+							<div> Autorefresh in <span id="time">05:00</span> minutes!</div>
+						</td>
+					</tr>
+				</table>
+				<div id='app'>
+					<div id='table-responsive'></div>
+				</div>
+
+	<!-- 		<table class="table table-bordered table-dark">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							Product
+						</th>
+						<th>
+							Payment Taken
+						</th>
+						<th>
+							Status
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="bg-warning">
+						<td>
+							1
+						</td>
+						<td>
+							WARNING
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Default
+						</td>
+					</tr>
+					<tr class="bg-primary">
+						<td>
+							1
+						</td>
+						<td>
+							EMERGENCY
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Approved
+						</td>
+					</tr>
+					<tr class="bg-success">
+						<td>
+							2
+						</td>
+						<td>
+							SUCCESS
+						</td>
+						<td>
+							02/04/2012
+						</td>
+						<td>
+							Declined
+						</td>
+					</tr>
+					<tr class="bg-danger">
+						<td>
+							3
+						</td>
+						<td>
+							DANGER
+						</td>
+						<td>
+							03/04/2012
+						</td>
+						<td>
+							Pending
+						</td>
+					</tr>
+					<tr class="bg-info">
+						<td>
+							4
+						</td>
+						<td>
+							INFO
+						</td>
+						<td>
+							04/04/2012
+						</td>
+						<td>
+							Call in to confirm
+						</td>
+					</tr>
+				</tbody>
+			</table> -->
+
+			<nav class="pagination-sm">
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" href="#">Previous</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">1</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">2</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">3</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">4</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">5</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">Next</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		
+		<div class="col-md-2">
+			<div class="tabbable" id="tabs-466643">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link active" href="#tab1" data-toggle="tab">Info</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#tab2" data-toggle="tab">Config</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-705534">
+						<p>
+							Info
+						</p>
+						<!-- 	<div class="alert alert-success alert-dismissable">
+					 
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true"  role="alert">
+								×
+							</button>
+							<h4>
+								Alert!
+							</h4> <strong>Warning!</strong> Best check yo self, you're not looking too good. <a href="#" class="alert-link">alert link</a>
+						</div>
+						
+						<div class="alert alert-success alert-dismissable">
+							 
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true" role="alert">
+								×
+							</button>
+							<h4>
+								Alert!
+							</h4> <strong>Warning!</strong> Best check yo self, you're not looking too good. <a href="#" class="alert-link">alert link</a>
+						</div>
+
+						<div class="alert alert-success alert-dismissable">
+							 
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+								×
+							</button>
+							<h4>
+								Alert!
+							</h4> <strong>Warning!</strong> Best check yo self, you're not looking too good. <a href="#" class="alert-link">alert link</a>
+						</div> -->
+
+						<div class="alert alert-primary" data-dismiss="alert" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+								×
+							</button>
+						  A simple primary alert—check it out!
+						</div>
+						<div class="alert alert-secondary" role="alert">
+						  A simple secondary alert—check it out!
+						</div>
+						<div class="alert alert-success" role="alert">
+						  A simple success alert—check it out!
+						</div>
+						<div class="alert alert-danger" role="alert">
+						  A simple danger alert—check it out!
+						</div>
+						<div class="alert alert-warning" role="alert">
+						  A simple warning alert—check it out!
+						</div>
+						<div class="alert alert-info" role="alert">
+						  A simple info alert—check it out!
+						</div>
+						<div class="alert alert-light" role="alert">
+						  A simple light alert—check it out!
+						</div>
+						<div class="alert alert-dark" role="alert">
+						  A simple dark alert—check it out!
+						</div>
+					</div>
+					<div class="tab-pane" id="tab2">
+						<p>
+							Howdy, I'm in Section 2.
+						</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+		
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="index.css" crossorigin="anonymous">
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+		<script src="index.js"></script>
+		<script src="table.js" type="text/babel"></script>
+		<script src="App1.js" type="text/babel"></script>
+  </body>
+</html>

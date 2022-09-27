@@ -1,0 +1,20 @@
+.table td {
+	font-size: 11px;
+}
+
+.table th {
+	text-align: center;
+}
+
+.table_title {
+	max-width: 100%;
+}
+
+.search {
+	max-width: 100%;
+}
+
+#timestamp {
+	text-align: left;
+	background-color: red;
+}

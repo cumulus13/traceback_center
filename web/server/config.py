@@ -8,7 +8,7 @@ class Config(object):
     SECRET_KEY = 'blackid'
     DATABASE_TYPE = 'postgresql'
     DATABASE_USER = 'traceback'
-    DATABASE_PASS = '12345678'
+    DATABASE_PASS = 'Xxxnuxer13'
     DATABASE_HOST = '127.0.0.1'
     DATABASE_PORT = '5432'
     DATABASE_NAME = 'traceback'
